@@ -1,0 +1,7 @@
+{
+  "name": "My Prague-Advisor App",
+  "description": "Traveling website",
+  "repository": "https://github.com/chen-finkelstein/prague-advisor-server.git",
+  "keywords": ["nodejs", "express", "angularjs"],
+  "image": "heroku/nodejs"
+}
