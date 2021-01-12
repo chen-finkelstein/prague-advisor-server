@@ -1,10 +1,15 @@
 var express = require('express');
 var app = express();
 var cors = require('cors');
-var DButilsAzure = require('./DButils');
 const jwt = require("jsonwebtoken");
 const user = require("./user_module");
 const poi = require("./poi_module");
+var path = require('path');
+
+var rootPath = path.normalize(__dirname) + '/../';
+app.use(express.static(rootPath + '/app'));
+app.use(express.static(__dirname + '/app'));
+app.use(express.static(__dirname + '/app/assets/images'));
 
 // run server
 const port = process.env.PORT || 3000;
@@ -31,7 +36,7 @@ app.use('/', function (req, res, next) {
     next();
 });
 
-app.get('/:id', function (req, res) {
+app.get('/', function (req, res) {
     res.sendFile(path.resolve('app/index.html'));
 });
 
