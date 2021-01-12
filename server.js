@@ -32,7 +32,7 @@ app.use('/', function (req, res, next) {
 });
 
 app.get('/', function (req, res) {
-    res.status(200);
+    res.sendFile(path.resolve('app/index.html'));
 });
 
 app.use('/user',user);
