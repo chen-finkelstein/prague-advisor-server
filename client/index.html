@@ -1,0 +1,63 @@
+<html ng-app="pragueApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="app.js"></script>
+    <script src="indexController.js"></script>
+    <script src="services.js"></script>
+    <script src="pages/home/homeController.js"></script>
+    <script src="pages/login/loginController.js"></script>
+    <script src="pages/register/registerController.js"></script>
+    <script src="pages/points/pointsController.js"></script>
+</head>
+
+<body ng-controller="indexController as idxCtrl">
+    
+    
+
+    <!-- <header id="header">
+        <nav class="links" style="--items: 6;">
+            <a href="#/">Home</a>
+            <a href="#/about">About</a>
+            <a href="#/poi">Points of Interest</a>
+            <a href="#/login">Login</a>
+            <a href="#/register">Register</a>
+            <span class="line"></span>
+            <a href="#">Hello {{currentUser}}</a>
+        </nav>
+        
+    </header> -->
+    <nav class="navbar navbar-inverse" style="margin-bottom: 0px; background-color: #0a1d29; border-color: #0a1d29;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="#/">Prague-Advisor</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a href="#/">Home</a></li>
+              <li><a href="#/about">About</a></li>
+              <li><a href="#/poi">Points of Interest</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div ng-view id="main"></div>
+
+</body>
+
+</html>
