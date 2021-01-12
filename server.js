@@ -32,7 +32,7 @@ app.use('/', function (req, res, next) {
 });
 
 app.get('/', function (req, res) {
-    res.status(200).json({ result: result });
+    res.status(200);
 });
 
 app.use('/user',user);
