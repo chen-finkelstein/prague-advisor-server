@@ -31,6 +31,10 @@ app.use('/', function (req, res, next) {
     next();
 });
 
+app.get('/', function (req, res) {
+    res.status(200).json({ result: result });
+});
+
 app.use('/user',user);
 
 app.use('/poi',poi);
