@@ -4,7 +4,7 @@ html, body { min-height: 100%; }
 
 #main {
 	position: relative;
-	background-image: url('./images/background2.jpg');
+	background: url('./images/background2.jpg');
 	top: 0;
 	height: 100%;
 	
