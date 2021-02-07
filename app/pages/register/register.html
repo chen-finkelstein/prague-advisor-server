@@ -1,12 +1,11 @@
-<div class="registerContent">
+<div class="content">
+    <div class="registerContent">
 
         <p class="register" align="center">Register</p>
         <form novalidate style="padding-top: 8px;" name="regForm">
             <div style="display: inline-grid; grid-template-columns: auto auto; justify-items: center; width: 85%;">
                 <input class="regInput" ng-model="firstname" name="firstname" type="fname" placeholder="First name" required>
                 <input class="regInput" ng-model="lastname" name="lastname" type="lname" placeholder="Last name" required>
-                <!-- <p class="error" ng-show="regForm.firstname.$touched && regForm.firstname.$invalid">Required.</p>
-                <p class="error" ng-show="regForm.lastname.$touched && regForm.lastname.$invalid">Required.</p>                 -->
             </div>
                     
             <input class="regInput" ng-model="username" name="username" type="text" placeholder="Username" required>
@@ -28,5 +27,6 @@
             regForm.country.$error.required || regForm.city.$error.required) && regForm.$submitted">All fields are required.</p>
             <button class="submit" ng-click="register()" style="position: absolute; margin: 0; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); bottom: 10px;">Sign in</button>
         </form>
+    </div>
 
 </div>
