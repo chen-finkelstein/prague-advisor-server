@@ -32,7 +32,20 @@ var nodeDT = require('node-datetime');
  */
 
 router.get('/', function (req, res) {
-    var pointID = req.query.pointID;
+    var statement = "select * from PointsOfInterest";
+    return DButilsAzure.execQuery(statement).then(function (result) {
+        if (result.length > 0) {
+            res.status(200).json({ result: result });
+        } else {
+            res.status(400).send("There are no points");
+        }
+    }).catch(function (result) {
+        res.status(400).send(result);
+    })
+});
+
+router.get('/:id', function (req, res) {
+    var pointID = req.params.pointID;
     var statement = "select * from PointsOfInterest where PointId=" + pointID + "";
     return DButilsAzure.execQuery(statement).then(function (result) {
         if (result.length > 0) {
@@ -41,7 +54,7 @@ router.get('/', function (req, res) {
             res.status(400).send("Point id does not exist");
         }
     }).catch(function (result) {
-        res.status(400).send("An error occurred");
+        res.status(400).send(result);
     })
 });
 

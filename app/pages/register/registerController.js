@@ -1,5 +1,5 @@
 angular.module('pragueApp')
-.controller('registerController', ['$location','$scope','$http','$window', function ($location,$scope, $http, $window) {
+.controller('registerController', ['$location','$scope','$http','$rootScope', function ($location,$scope, $http, $rootScope) {
     $scope.error = false;
     $scope.errorMessage = "";
     $scope.categoriesError = false;
@@ -13,7 +13,7 @@ angular.module('pragueApp')
     $scope.register = function () {
         if ($scope.regForm.$valid && $scope.categoriesValid()) {
             $http({
-                url: "https://prague-advisor-server.herokuapp.com/user/register",
+                url: $rootScope.host + "user/register",
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

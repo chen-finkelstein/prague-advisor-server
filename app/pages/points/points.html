@@ -1,25 +1,10 @@
 
 <div class="content">
-    <div class="row scroll-menu">
-            <p>Museums</p>
-            <span ng-repeat="rec in records"> 
-                <a href="#/"><img src="{{rec.imagePath}}" style="width: 200px;"></img></a>
+    <div class="scroll-menu" ng-repeat="(category, points) in points">
+            <p>{{category}}</p>
+            <span ng-repeat="point in points"> 
+                <img ng-src="{{point.imagePath}}" style="height: 100px; width: 200px;"></img>
             </span>
     </div>
-    <div class="row scroll-menu">
-        <span ng-repeat="rec in records"> 
-            <a href="#/"><img src="{{rec.imagePath}}" style="width: 200px;"></img></a>
-        </span>
-</div>
-<div class="row scroll-menu">
-    <span ng-repeat="rec in records"> 
-        <a href="#/"><img src="{{rec.imagePath}}" style="width: 200px;"></img></a>
-    </span>
-</div>
-<div class="row scroll-menu">
-    <span ng-repeat="rec in records"> 
-        <a href="#/"><img src="{{rec.imagePath}}" style="width: 200px;"></img></a>
-    </span>
-</div>
 </div>
 

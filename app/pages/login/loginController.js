@@ -6,7 +6,7 @@ angular.module('pragueApp')
 
         $scope.login = function () {
             $http({
-                url: "https://prague-advisor-server.herokuapp.com/user/login",
+                url: $rootScope.host + "user/login",
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
