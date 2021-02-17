@@ -1,10 +1,10 @@
 
 <div class="content">
-    <div class="scroll-menu" ng-repeat="(category, points) in points">
-            <p>{{category}}</p>
-            <span ng-repeat="point in points"> 
-                <img ng-src="{{point.imagePath}}" style="height: 100px; width: 200px;"></img>
-            </span>
+    <div class="scroll-menu" ng-repeat="category in categories">
+        <p>{{category}}</p>
+        <span ng-repeat="point in points | filter: category"> 
+            <img ng-src="{{point.imagePath}}" style="height: 100px; width: 200px;"></img>
+        </span>
     </div>
 </div>
 

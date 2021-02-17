@@ -1,27 +1,24 @@
 angular.module('pragueApp')
-    .controller('pointsController', ['$location', '$scope', '$http', '$window', '$rootScope', 'poiFactory', function ($location, $scope, $http, $window, $rootScope, poiFactory) {
+    .controller('pointsController', ['$timeout','$location', '$scope', '$http', '$window', '$rootScope', 'poiFactory', function ($timeout, $location, $scope, $http, $window, $rootScope, poiFactory) {
 
-
-        $scope.points = {};
-
-
-        $scope.getPoints = function () {
+        $scope.getPoints = function () { 
             $http({
                 url: $rootScope.host + "poi/",
                 method: "GET"
             }).then(function (response) {
-                result = response.data.result;
-                for (i = 0; i < result.length; i++) {
-                    if ($scope.points[result[i].Category] == undefined) {
-                        $scope.points[result[i].Category] = [];
-                    }
-                    $scope.points[result[i].Category].push(result[i]);
+                $scope.points = response.data.result;
+                s_categories = new Set();
+                for (i = 0; i < $scope.points.length; i++) {
+                    s_categories.add($scope.points[i].Category);
                 }
+                $scope.categories = Array.from(s_categories);
             }, function (response) {
+                console.log("ERROR !!!!!");
+                console.log(response.status);
                 console.log(response.data);
             });
         }
-
+        
         $scope.getPoints();
 
 
