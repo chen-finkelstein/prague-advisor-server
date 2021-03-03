@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,400,700');
 
-html, body { min-height: 100%; }
-
-#main {
-	position: relative;
+body { 
+	padding-top: 20px; 
 	background: url('./images/background2.jpg');
-	background-repeat: no-repeat;
-	top: 0;
+	background-repeat: repeat-y;
 	height: 100%;
+	display: flex;
 	background-size: cover;
+	justify-content: center;
 }
 
 .navbar-inverse {
@@ -19,56 +18,34 @@ html, body { min-height: 100%; }
 }
 
 .content {
-	position: absolute;
-	justify-content: center;
-	height: 78%;
-	width: 76%;
-	left: 12%;
-	top: 7%;
+	height: auto;
+	color: white;
+	padding: 25px;
+	text-align: center;
 }
 
-.loginContent {
-	text-align: center;
-	position: absolute;
-	height: 65%;
-	width: 30%;
-	left: 35%;
-	top: 5%;
+.mainTitle {
+	font-size: 40px;
+	font-weight: bolder;
+}
+
+.form {
+	margin-top: 30px;
+	padding: 10px;
+	width: 370px;
 	background-color: #ffffff;
 	opacity: 92%;
-	margin: auto;
 	border-radius: 1.5em;
 	box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.719);
-}
-
-.registerContent {
 	text-align: center;
-	position: absolute;
-	height: 100%;
-	width: 310px;
-	/* justify-content: center; */
-	background-color: #ffffff;
-	opacity: 92%;
-	margin: auto;
-	border-radius: 1.5em;
-	box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.719);
 }
 
-.register {
+.formTitle {
 	color: #24709c;
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: bold;
 	font-size: 23px;
-	margin-bottom: 0;
-}
-
-.sign {
-	/* padding-top: 40px; */
-	color: #24709c;
-	font-family: 'Ubuntu', sans-serif;
-	font-weight: bold;
-	font-size: 23px;
-	margin-bottom: 0;
+	margin-bottom: 15px;
 }
 
 input {
@@ -78,22 +55,16 @@ input {
 	font-size: 14px;
 	letter-spacing: 1px;
 	background: rgba(136, 126, 126, 0.04);
-	padding: 10px 20px;
+	padding: 8px 15px;
 	border: none;
 	border-radius: 20px;
 	outline: none;
 	box-sizing: border-box;
 	border: 2px solid rgba(0, 0, 0, 0.02);
 	text-align: center;
-	margin-bottom: 27px;
+	margin-bottom: 7px;
+	margin-top: 7px;
 	font-family: 'Ubuntu', sans-serif;
-}
-
-.regInput {
-	font-size: 13px;
-	padding: 5px 10px;
-	margin-top: 15px;
-	margin-bottom: 0;
 }
 
 
@@ -109,24 +80,19 @@ input {
 	color: #fff;
 	background: linear-gradient(to right, #24709c, #457c9c);
 	border: 0;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-bottom: 10px;
-	padding-top: 10px;
+	padding: 10px 40px;
 	font-family: 'Ubuntu', sans-serif;
-	/* margin-left: 35%; */
 	font-size: 13px;
 	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+	outline: none;
+	margin-top: 5px;
 }
 
-.loginTxt {
-	text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-	color: #184966;
-	font-size: 13px;
+.inlineInput {
+	width: 38%;
 }
 
-.regTxt {
-	display: block;
+.formText {
 	text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
 	color: #184966;
 	font-size: 13px;
@@ -150,12 +116,65 @@ input[type=checkbox] {
 	cursor: pointer;
 }
 
+.category {
+	width: 90vw;
+	margin: 20px 0;
+	background-color: white;
+	padding: 5px;
+	border-radius: 0.5em;
+}
+
+.categoryTitle {
+	font-size: 16pt;
+}
+
 .scroll-menu {
 	background-color: rgb(255, 255, 255);
 	overflow: auto;
 	white-space: nowrap;
-	margin-bottom: 15px;
+	position: relative;
 }
+
+.myThumbnail{
+	position: relative;
+	display: inline-block;
+	box-sizing: border-box;
+	height: 120px; 
+	width: 200px; 
+	margin: 10px 5px;
+}
+
+.myThumbnail img{
+	width: 100%;
+	height: 100%;
+}
+
+.myThumbnail .name {
+	position: absolute;
+	bottom: 0;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.5);
+	color: #ffffff;
+	width: 100%;
+	padding: 5px;
+  }
+
+  .myThumbnail .name a{
+	  color:white;
+  }
+
+/* .name {
+    background-color: rgba(0,0,0, 0.3);
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    transition: all 0.4s;
+} */
 
 ::-webkit-scrollbar-track
 {
@@ -167,6 +186,7 @@ input[type=checkbox] {
 ::-webkit-scrollbar
 {
 	width: 12px;
+	height: 10px;
 	background-color: #F5F5F5;
 }
 
@@ -175,6 +195,7 @@ input[type=checkbox] {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color:#0a1d29;
+	cursor: pointer;
 }
 
  

@@ -12,9 +12,8 @@ angular.module('pragueApp')
                     s_categories.add($scope.points[i].Category);
                 }
                 $scope.categories = Array.from(s_categories);
+                console.log($scope.points);
             }, function (response) {
-                console.log("ERROR !!!!!");
-                console.log(response.status);
                 console.log(response.data);
             });
         }

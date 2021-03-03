@@ -19,7 +19,7 @@
 
 <body ng-controller="indexController as idxCtrl">
     
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -31,18 +31,18 @@
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-              <li><a href="#/">Home</a></li>
-              <li><a href="#/about">About</a></li>
-              <li><a href="#/poi">Points of Interest</a></li>
+              <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#/">Home</a></li>
+              <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#/about">About</a></li>
+              <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#/poi">Points of Interest</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
           </div>
         </div>
       </nav>
-    <div ng-view id="main"></div>
+    <div ng-view style="padding: 30px 0px;"></div>
 
 </body>
 

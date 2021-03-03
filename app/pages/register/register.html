@@ -1,23 +1,19 @@
-<div class="content">
-    <div class="registerContent">
+<div class="form">
 
-        <p class="register" align="center">Register</p>
-        <form novalidate style="padding-top: 8px;" name="regForm">
-            <div style="display: inline-grid; grid-template-columns: auto auto; justify-items: center; width: 85%;">
-                <input class="regInput" ng-model="firstname" name="firstname" type="fname" placeholder="First name" required>
-                <input class="regInput" ng-model="lastname" name="lastname" type="lname" placeholder="Last name" required>
-            </div>
-                    
-            <input class="regInput" ng-model="username" name="username" type="text" placeholder="Username" required>
+        <p class="formTitle" align="center">Register</p>
+        <form novalidate name="regForm">
+            <input class="inlineInput" ng-model="firstname" name="firstname" type="fname" placeholder="First name" required>
+            <input class="inlineInput" ng-model="lastname" name="lastname" type="lname" placeholder="Last name" required>          
+            <input ng-model="username" name="username" type="text" placeholder="Username" required>
             <p class="error" ng-show="error">{{errorMessage}}</p>
-            <input class="regInput" ng-model="password" name="password" type="password" placeholder="Password" required>
-            <input class="regInput" ng-model="email" name="email" type="email" placeholder="Email" required>
+            <input ng-model="password" name="password" type="password" placeholder="Password" required>
+            <input ng-model="email" name="email" type="email" placeholder="Email" required>
             <p class="error" ng-show="!regForm.email.$error.required && regForm.email.$invalid && regForm.$submitted">Please enter a valid email.</p>
-            <input class="regInput" ng-model="country" name="country" type="country" placeholder="Country" required>
-            <input class="regInput" ng-model="city" name="city" type="city" placeholder="City" required>
-            <label class="regTxt" style="margin-bottom: 10px; margin-top: 10px;">What are you interested in?  Choose 2 or more:</label>
-            <span ng-repeat="category in categories" name ="categories" style="display: inline-block; margin-bottom: 10px">
-                <label class="regTxt" style="display: block; margin: 0 7px 0 7px;">
+            <input ng-model="country" name="country" type="country" placeholder="Country" required>
+            <input ng-model="city" name="city" type="city" placeholder="City" required>
+            <label class="formText">What are you interested in?  Choose 2 or more:</label>
+            <span ng-repeat="category in categories" name ="categories">
+                <label class="formText">
                     <input ng-model="category.checked" type="checkbox"/>{{category.id}}
                  </label>
             </span>
@@ -25,8 +21,6 @@
             <p class="error" ng-show="(regForm.firstname.$error.required || regForm.lastname.$error.required || 
             regForm.username.$error.required || regForm.password.$error.required || regForm.email.$error.required ||
             regForm.country.$error.required || regForm.city.$error.required) && regForm.$submitted">All fields are required.</p>
-            <button class="submit" ng-click="register()" style="position: absolute; margin: 0; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); bottom: 10px;">Sign in</button>
+            <button class="submit" ng-click="register()">Sign in</button>
         </form>
     </div>
-
-</div>

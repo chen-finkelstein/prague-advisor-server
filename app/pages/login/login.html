@@ -1,15 +1,15 @@
-<div class="loginContent">
-    <p class="sign" align="center">Sign in</p>
-    <form style="padding-top: 50px;" name="loginForm">
+<div class="form">
+    <p class="formTitle" align="center">Sign in</p>
+    <form name="loginForm">
         <input class="input" ng-model="username" name="username" type="text" placeholder="Username" required>
-        <input class="input" style="margin-bottom: 10px;" ng-model="password" name="password" type="password" placeholder="Password" required>
+        <input class="input" ng-model="password" name="password" type="password" placeholder="Password" required>
         <p class="error" ng-show="error">username or password are incorrect</p>
-        <button class="submit" style="margin-top: 10px;" ng-click="login()" align="center" ng-disabled="loginForm.username.$invalid || loginForm.password.$invalid">Sign in</button>
-        <span style="display:block; padding-top: 20px;">
-            <label class="loginTxt" ng-click="register()">Don't have an account yet? &nbsp;</label>
-            <label style="text-decoration: underline;"><a href="#/register" class="loginTxt">Register
+        <button class="submit" ng-click="login()" align="center" ng-disabled="loginForm.username.$invalid || loginForm.password.$invalid">Sign in</button>
+        <div style="margin-top: 20px;">
+            <label class="formText" ng-click="register()">Don't have an account yet? &nbsp;</label>
+            <label style="text-decoration: underline;"><a href="#/register" class="formText">Register
                     now</a></label>
-        </span>
-        <p ng-click="restorePass()"><a href="#" class="loginTxt">Forgot Password?</p>
+        </div>
+        <p class="formText">Forgot Password?</p>
     </form>
 </div>
